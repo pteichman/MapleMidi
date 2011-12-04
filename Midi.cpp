@@ -225,13 +225,10 @@ void Midi::recvByte(int byte)
 // Try to read data at serial port & pass anything read to processing function
 void Midi::poll(void)
 {
-    int c;
-    
-    
     // Just keep sucking data from serial port until it runs out, processing
     //  MIDI messages as we go
-    while((c = serial_.read()) != -1) {
-        recvByte(c);
+    while(serial_.available() > 0) {
+        recvByte(serial_.read());
     }
 }
 
