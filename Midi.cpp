@@ -20,7 +20,6 @@
  */
  
 #include "HardwareSerial.h"
-#include "WConstants.h"
 #include "Midi.h"
 
 
